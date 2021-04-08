@@ -1,6 +1,6 @@
 # FINANCE-TRACKER APP
 
-![](https://github.com/mfcrespo/projects-RoR/blob/main/contacts_importer/app/assets/images/contacts_importer.mp4)
+![](https://github.com/mfcrespo/projects-RoR/blob/main/contacts_importer/app/assets/images/contacts_importer.gif)
 
 This is a contacts importer app built in Ruby on Rails 6.1.
 
