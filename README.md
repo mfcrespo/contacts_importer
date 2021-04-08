@@ -1,6 +1,6 @@
 # CONTACT IMPORTER APP
 
-![](https://github.com/mfcrespo/projects-RoR/blob/main/contacts_importer/app/assets/images/contacts_importer.gif)
+![](https://github.com/mfcrespo/projects-RoR/blob/main/contacts_importer/app/assets/images/contact_importer.gif)
 
 This is a contacts importer app built in Ruby on Rails 6.1.
 
