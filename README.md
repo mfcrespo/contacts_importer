@@ -1,4 +1,4 @@
-# FINANCE-TRACKER APP
+# CONTACT IMPORTER APP
 
 ![](https://github.com/mfcrespo/projects-RoR/blob/main/contacts_importer/app/assets/images/contacts_importer.gif)
 
