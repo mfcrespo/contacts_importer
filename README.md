@@ -1,6 +1,6 @@
 # CONTACT IMPORTER APP
 
-![](https://github.com/mfcrespo/projects-RoR/blob/main/contacts_importer/app/assets/images/contact_importer.gif)
+![](https://github.com/mfcrespo/contacts_importer/blob/main/app/assets/images/contact_importer.gif)
 
 This is a contacts importer app built in Ruby on Rails 6.1.
 
@@ -8,6 +8,7 @@ This README would normally document whatever steps are necessary to get the
 application up and running.
 
 ## To run this project you have to run:
+
 * git clone <repo>
 * cd contacts_importer
 * bundle install
