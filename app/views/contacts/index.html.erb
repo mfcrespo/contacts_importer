@@ -26,6 +26,9 @@ In this page the user uploads a CSV file
     <td><%= contact.credit_card %></td>
     <td><%= contact.franchise %></td>
     <td><%= contact.email %></td>
+    <td><%= link_to 'Show', contact_path(contact) %></td>
+        <td><%= link_to 'Edit', edit_contact_path(contact) %></td>
+        <td><%= link_to 'Delete', contact_path(contact), method: :delete, data: { confirm: "Are you sure?" } %></td>
   </tr>
 <% end %>
 </table>  
@@ -35,5 +38,3 @@ In this page the user uploads a CSV file
   <%= file_field_tag :file %>
   <%= submit_tag 'Import' %>
 <% end %>  
-
-
