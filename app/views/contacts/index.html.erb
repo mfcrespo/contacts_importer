@@ -23,7 +23,7 @@ In this page the user uploads a CSV file
     <td><%= contact.birthday %></td>
     <td><%= contact.phone %></td>
     <td><%= contact.address %></td>
-    <td><%= contact.credit_card %></td>
+    <td><%= contact.credit_card.last(4) %></td>
     <td><%= contact.franchise %></td>
     <td><%= contact.email %></td>
     <td><%= link_to 'Show', contact_path(contact) %></td>

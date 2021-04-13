@@ -11,6 +11,7 @@ class Contact < ApplicationRecord
   validate :valid_birthday
   validates :phone, format: { with: PHONE_REGEX_VALID, message: 'Please include de phone in the next formats: (+57) 320 432 05 09 or (+57) 320-432-05-09'}
   validates :email, email: true, uniqueness: { scope: :user_id, message: "You have a contact with the same email" }
+  
 
   def valid_birthday
     date = Date.iso8601(birthday)
@@ -24,7 +25,7 @@ class Contact < ApplicationRecord
                                     phone: contact_hash['phone'], 
                                     address: contact_hash['address'], 
                                     credit_card: contact_hash['credit_card'], 
-                                    franchise: contact_hash['franchise'], 
+                                    franchise: CreditCardValidations::Detector.new(contact_hash['credit_card']).brand_name, 
                                     email: contact_hash['email'],
                                     user_id: user.id)
       contact.update(contact_hash)
