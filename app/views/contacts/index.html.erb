@@ -20,7 +20,7 @@ In this page the user uploads a CSV file
 <% @contacts.each do |contact| %>
   <tr>
     <td><%= contact.name %></td>
-    <td><%= contact.birthday %></td>
+    <td><%= birthday_format(contact.birthday) %></td>
     <td><%= contact.phone %></td>
     <td><%= contact.address %></td>
     <td><%= contact.last_digits %></td>
