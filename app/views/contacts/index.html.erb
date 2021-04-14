@@ -12,7 +12,7 @@ In this page the user uploads a CSV file
     <th>Birthday</th>
     <th>Phone</th>
     <th>Address</th>
-    <th>Credit Card</th>
+    <th>Last_digits</th>
     <th>Franchise</th>
     <th>Email</th>
   </tr>
@@ -23,7 +23,7 @@ In this page the user uploads a CSV file
     <td><%= contact.birthday %></td>
     <td><%= contact.phone %></td>
     <td><%= contact.address %></td>
-    <td><%= contact.credit_card.last(4) %></td>
+    <td><%= contact.last_digits %></td>
     <td><%= contact.franchise %></td>
     <td><%= contact.email %></td>
     <td><%= link_to 'Show', contact_path(contact) %></td>
