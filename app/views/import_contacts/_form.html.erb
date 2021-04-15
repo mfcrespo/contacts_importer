@@ -1,0 +1,34 @@
+<h1>Import CSV Files</h1>
+
+<%= form_tag import_import_contacts_path, multipart: true do %>
+  <div>
+  <%= file_field_tag :file, required: true %>
+  </div>
+  <div>
+  <%= 'Select your first row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone",  ]), :required => true %>
+  </div>
+  <div>
+  <%= 'Select your second row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  </div>
+  <div>
+  <%= 'Select your 3 row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  </div>
+  <div>
+  <%= 'Select your 4 row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  </div>
+  <div>
+  <%= 'Select your 5 row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  </div>
+  <div>
+  <%= 'Select your 6 row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  </div>
+  <div>
+  <%= submit_tag "Import Contacts"%>
+<% end %>
+</div>
