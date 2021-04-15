@@ -1,5 +1,7 @@
 class ImportContact < ApplicationRecord
+
   belongs_to :user
+  validates_presence_of :filename, :status
 
   def self.import_csv(file, user)
     CSV.foreach(file.path, headers: true) do |row|
