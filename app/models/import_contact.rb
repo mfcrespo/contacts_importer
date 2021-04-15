@@ -5,8 +5,8 @@ class ImportContact < ApplicationRecord
   validates_presence_of :filename, :state
 
   aasm column: 'state' do
-    state :waiting, initial: true
-    state :processing, :failed, :finished
+    state :processing, initial: true
+    state :waiting, :failed, :finished
 
     event :processing_file do
       transitions from: :waiting, to: :processing
@@ -37,7 +37,7 @@ class ImportContact < ApplicationRecord
         saved
       else
         reject_contacts(user, contact, contact_hash)
-        
+ 
       end
     end
   end
