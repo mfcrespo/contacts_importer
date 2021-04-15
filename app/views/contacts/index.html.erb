@@ -1,5 +1,5 @@
-Index
-In this page the user uploads a CSV file
+
+<h1>Contacts List</h1>
 <div>
 <%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
 </div>
@@ -33,8 +33,6 @@ In this page the user uploads a CSV file
 <% end %>
 </table>  
 
-<h2>Import contacts</h2>
-<%= form_tag import_contacts_path, multipart: true do %>
-  <%= file_field_tag :file %>
-  <%= submit_tag 'Import' %>
-<% end %>  
+<h2>Do you have upload contacts?</h2>
+<%= link_to 'Next to upload', new_import_contact_path %>
+<%= will_paginate @contacts %>
