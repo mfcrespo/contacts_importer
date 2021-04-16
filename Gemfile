@@ -25,6 +25,7 @@ gem 'devise'
 gem 'credit_card_validations'
 gem 'will_paginate', '~> 3.3'
 gem 'aasm'
+gem 'sidekiq'
 
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
