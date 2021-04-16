@@ -21,7 +21,7 @@ class ImportContact < ApplicationRecord
     end
   end
 
-  def self.import_csv(file, user)
+  def import_csv(file, user)
     CSV.foreach(file.path, headers: true) do |row|
       contact_hash = row.to_hash
       contact = Contact.new(name: contact_hash['name'], 
@@ -33,16 +33,16 @@ class ImportContact < ApplicationRecord
                                     franchise: contact_hash['credit_card'], 
                                     email: contact_hash['email'],
                                     user_id: user.id)
-      if contact.save
-        saved
+      if contact.save && may_finished_import?
+        finished_import!
       else
-        reject_contacts(user, contact, contact_hash)
+        reject_contacts!(user, contact, contact_hash)
  
       end
     end
   end
 
-  def self.reject_contacts(user, contact, contact_hash)
+  def reject_contacts!(user, contact, contact_hash)
     errors = []
     errors = contact.errors.full_messages.join(', ')
     rejected_contact = RejectedContact.new(name: contact_hash['name'], 
@@ -55,6 +55,7 @@ class ImportContact < ApplicationRecord
                                           email: contact_hash['email'],
                                           user_id: user.id, error: errors)
     rejected_contact.save
+    failed_import! if may_failed_import?
   end
 end
 
