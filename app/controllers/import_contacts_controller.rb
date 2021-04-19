@@ -1,19 +1,18 @@
 class ImportContactsController < ApplicationController
+  before_action :authenticate_user!
 
   def new
-    @import_contact = ImportContact.new
+    @import_contacts = ImportContact.new
+    @import_contact = ImportContact.all
   end
 
   def index
-    @imported_contacts = ImportContact.all
+    @imported_contacts = ImportContact.all.paginate(page: params[:page], per_page: 10)
   end
   
   def import
-    @import_contact = current_user.import_contacts.build(filename: params[:file].original_filename)
-    @import_contact.save
-    @import_contact.import_csv(params[:file], current_user)
+    ContactsImporterJob.perform_later
     redirect_to contacts_path, alert: 'Contacts imported.'
   end
-
 
 end

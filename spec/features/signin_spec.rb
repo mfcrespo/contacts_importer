@@ -9,7 +9,7 @@ RSpec.describe 'the signin process', type: :feature do
     fill_in 'Email', with: 'user1@gmail.com'
     fill_in 'Password', with: 'password'
     click_button 'Log in'
-    expect(current_path).to eq(users_index_path)
+    expect(current_path).to eq(contacts_path)
     expect(page).to have_text('Signed in successfully.')
   end
 end

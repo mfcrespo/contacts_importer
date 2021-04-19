@@ -1,6 +1,6 @@
 class RejectedContact < ApplicationRecord
   belongs_to :user
-
+  default_scope {order("created_at DESC")}
   validates_presence_of :error
   validate :credit_card_validations
   after_validation :card_encrypted

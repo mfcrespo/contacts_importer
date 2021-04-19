@@ -1,12 +1,12 @@
+<h2>Rejected Contacts List</h2>
 
-<h1>Contacts List</h1>
-<div>
-<%= link_to 'Log Out', destroy_user_session_path, method: :delete %>
+<div class="container">
+<h4>Do you have upload contacts?</h4>
+<%= link_to 'Next to upload', new_import_contact_path, class: 'btn1' %>
 </div>
 
-<h1>Contacts</h1>
-
-<table>
+<div class="row m-0">
+  <table class="table">
   <tr>
     <th>Name</th>
     <th>Birthday</th>
@@ -15,24 +15,24 @@
     <th>Last_digits</th>
     <th>Franchise</th>
     <th>Email</th>
-    <th>Error</th>
+    <th>Errors</th>
   </tr>
 
-<% @rejected_contacts.each do |rejected_contact| %>
-  <tr>
-    <td><%= rejected_contact.name %></td>
-    <td><%= birthday_format(rejected_contact.birthday) %></td>
-    <td><%= rejected_contact.phone %></td>
-    <td><%= rejected_contact.address %></td>
-    <td><%= rejected_contact.last_digits %></td>
-    <td><%= rejected_contact.franchise %></td>
-    <td><%= rejected_contact.email %></td>
-    <td><%= rejected_contact.error %></td>
+  <% @rejected_contacts.each do |rejected_contact| %>
+    <tr>
+      <td><%= rejected_contact.name %></td>
+      <td><%= birthday_format(rejected_contact.birthday) %></td>
+      <td><%= rejected_contact.phone %></td>
+      <td><%= rejected_contact.address %></td>
+      <td><%= rejected_contact.last_digits %></td>
+      <td><%= rejected_contact.franchise %></td>
+      <td><%= rejected_contact.email %></td>
+      <td><%= rejected_contact.error %></td>
 
-    <td><%= link_to 'Delete', contact_path(rejected_contact), method: :delete, data: { confirm: "Are you sure?" } %></td>
-  </tr>
-<% end %>
-</table>  
+      <td><%= link_to 'Delete', contact_path(rejected_contact), method: :delete, data: { confirm: "Are you sure?" } %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
 
-<%= link_to 'Back', contacts_path %>
 <%= will_paginate @rejected_contacts %>
