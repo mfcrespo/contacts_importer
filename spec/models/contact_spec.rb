@@ -3,9 +3,14 @@ require 'rails_helper'
 RSpec.describe Contact, type: :model do
   let(:user) { User.create!(email: 'user@prueba.com', password: 'p123456') }
   subject(:contact) {
-    described_class.new(
-      name: 'Maria Crespo', birthday: '1977-02-26', phone: '(+57) 316-480-29-36', address: 'Palmares Casa 26',
-      credit_card: '30130188259195', last_digits: '9195', franchise: 'Visa', email: 'user@prueba.com', user_id: user.id
+    described_class.new(name: 'Maria Crespo', 
+                        birthday: '1977-02-26',
+                        phone: '(+57) 316-480-29-36',
+                        address: 'Palmares Casa 26',
+                        credit_card: '30130188259195',
+                        last_digits: '9195',
+                        franchise: 'Visa',
+                        email: 'user@prueba.com', user_id: user.id
     )
   }
 
