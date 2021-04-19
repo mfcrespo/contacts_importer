@@ -1,6 +1,8 @@
 class ContactsController < ApplicationController
+	before_action :authenticate_user!
+
   def index
-    @contacts = Contact.all.paginate(page: params[:page], per_page: 20)
+    @contacts = Contact.all.paginate(page: params[:page], per_page: 10)
   end
 
   def destroy

@@ -1,34 +1,35 @@
-<h1>Import CSV Files</h1>
+<h2>Import CSV Files</h2>
 
 <%= form_tag import_import_contacts_path, multipart: true do %>
   <div>
   <%= file_field_tag :file, required: true %>
   </div>
   <div>
-  <%= 'Select your first row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone",  ]), :required => true %>
+  <%= 'Select your 1st row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "name"), :required => true %>
   </div>
   <div>
-  <%= 'Select your second row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  <%= 'Select your 2nd row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "birthday"), :required => true %>
   </div>
   <div>
-  <%= 'Select your 3 row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  <%= 'Select your 3rd row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "phone"), :required => true %>
   </div>
   <div>
-  <%= 'Select your 4 row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  <%= 'Select your 4th row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "address"), :required => true %>
   </div>
   <div>
-  <%= 'Select your 5 row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  <%= 'Select your 5th row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "credit_card"), :required => true %>
   </div>
   <div>
-  <%= 'Select your 6 row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "phone" ], "name"), :required => true %>
+  <%= 'Select your 6th row'%>
+    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "email"), :required => true %>
   </div>
   <div>
-  <%= submit_tag "Import Contacts"%>
+  <%= submit_tag "Import Contacts", class: 'btn2' %>
+  </div>
 <% end %>
 </div>

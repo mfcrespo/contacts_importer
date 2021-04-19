@@ -1,0 +1,25 @@
+<h2>Uploaded Files</h2>
+
+<div class="container">
+<h4>Do you have upload contacts?</h4>
+<%= link_to 'Next to upload', new_import_contact_path, class: 'btn1' %>
+</div>
+
+<div class="row m-0">
+  <table class="table">
+  <tr>
+    <th>Filename</th>
+    <th>State</th>
+  </tr>
+
+  <% @imported_contacts.each do |imported_contact| %>
+    <tr>
+      <td><%= imported_contact.filename %></td>
+      <td><%= imported_contact.state %></td>
+      
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+<%= will_paginate @imported_contacts %>

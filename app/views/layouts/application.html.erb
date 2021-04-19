@@ -11,7 +11,11 @@
   </head>
 
   <body>
+    <%= render 'layouts/navigation' %>
     <%= render 'layouts/flash' %>
     <%= yield %>
   </body>
+  <footer>
+    <%= render 'layouts/footer' %>
+  </footer>
 </html>

@@ -1,11 +1,7 @@
 class Contact < ApplicationRecord
   belongs_to :user
   before_save :sanitize_text
-
-  enum fields: { name: "Name", birthday: "Finance", 
-                      phone: "Operations", address: "Security", 
-                      credit_card: "Human Resources", email: "Security" },
-                      _prefix: :fields
+  default_scope {order("created_at DESC")}
 
   NAME_REGEX_VALID = /\A[a-zA-Z\s-]+\z/
   PHONE_REGEX_VALID = /\(\+\d{2}\)\s\d{3}\s\d{3}\s\d{2}\s\d{2}|\(\+\d{2}\)\s\d{3}\-\d{3}\-\d{2}\-\d{2}/
