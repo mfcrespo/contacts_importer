@@ -1,32 +1,42 @@
-<h2>Import CSV Files</h2>
-
 <%= form_tag import_import_contacts_path, multipart: true do %>
   <div>
   <%= file_field_tag :file, required: true %>
   </div>
   <div>
-  <%= 'Select your 1st row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "name"), :required => true %>
+    <%= 'Select your 1st row'%>
+    <%= select_tag "name", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "name"), :required => true %>
+    <%= label_tag 'or your own field'%>
+    <%= text_field_tag :name, '', :required => false %>
   </div>
   <div>
   <%= 'Select your 2nd row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "birthday"), :required => true %>
+    <%= select_tag "birthday", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "birthday"), :required => true %>
+  <%= label_tag 'or your own field'%>
+    <%= text_field_tag :birthday, '', :required => false %>
   </div>
   <div>
   <%= 'Select your 3rd row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "phone"), :required => true %>
+    <%= select_tag "phone", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "phone"), :required => true %>
+  <%= label_tag 'or your own field'%>
+    <%= text_field_tag :phone, '', :required => false %>
   </div>
   <div>
   <%= 'Select your 4th row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "address"), :required => true %>
+    <%= select_tag "address", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "address"), :required => true %>
+  <%= label_tag 'or your own field'%>
+    <%= text_field_tag :address, '', :required => false %>
   </div>
   <div>
   <%= 'Select your 5th row'%>
     <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "credit_card"), :required => true %>
+  <%= label_tag 'or your own field'%>
+    <%= text_field_tag :credit_card, '', :required => false %>
   </div>
   <div>
   <%= 'Select your 6th row'%>
-    <%= select_tag "credit_card", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "email"), :required => true %>
+    <%= select_tag "email", options_for_select([ "name", "birthday", "phone", "address", "credit_card", "email" ], "email"), :required => true %>
+    <%= label_tag 'or your own field'%>
+    <%= text_field_tag :email, '', :required => false %>
   </div>
   <div>
   <%= submit_tag "Import Contacts", class: 'btn2' %>

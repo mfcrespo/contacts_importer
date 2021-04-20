@@ -43,4 +43,17 @@ class Contact < ApplicationRecord
     self.name = name.titleize
     self.email = email.downcase
   end
+
+  def self.headers_pair(user, row_hash, remote_headers)
+    hash = {}
+    local_headers = %w[name birthday phone address credit_card email]
+    pair = local_headers.each_with_object({}) do |key, hash|
+      hash[remote_headers[key]] = key
+    end
+    row_hash.each do |key, value|
+      next unless pair.keys.include?(key)
+      hash[pair[key]] = value
+    end
+    hash
+  end
 end
