@@ -1,6 +1,6 @@
 class ContactsImporterJob < ApplicationJob
   queue_as :default
-  sidekiq_options retry: true
+  sidekiq_options retry: false
 
   def perform(file_path, current_user_id, filename, remote_headers)
     current_user = User.find_by(id: current_user_id)
